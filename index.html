@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
     <head>
-        <!--Help character display properly.-->
+        <!-- Help character display properly. -->
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <!--Set the initial scale of the email.-->
+        <!-- Set the initial scale of the email. -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!--Force Outlook clients to render with a better MS engine.-->
+        <!-- Force Outlook clients to render with a better MS engine. -->
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-        <!--Help prevent blue links and autolinking-->
+        <!-- Help prevent blue links and autolinking -->
         <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
-        <!--prevent Apple from reformatting and zooming messages.-->
+        <!-- Prevent Apple from reformatting and zooming messages. -->
         <meta name="x-apple-disable-message-reformatting">
-        <!--target dark mode-->
+        <!-- Target dark mode -->
         <meta name="color-scheme"            content="light dark">
         <meta name="supported-color-schemes" content="light dark only">
+        <!-- The title tag -->
+        <title>Daily Sentry Newsletter</title>
 
         <!-- Allows for better image rendering on Windows hi-DPI displays. -->
         <!--[if mso]>
@@ -27,13 +29,15 @@
         </noscript>
         <![endif]-->
 
-        <!--to support dark mode meta tags-->
+        <!-- To support dark mode meta tags -->
         <style type="text/css">
             :root {
                 color-scheme: light dark;
                 supported-color-schemes: light dark;
             }
         </style>
+
+        <!-- Web fonts / @font-face -->
         <style>
             @media screen {
                 /* latin */
@@ -56,38 +60,33 @@
                 }
             }
         </style>
+
+        <!-- Resets -->
         <style type="text/css">
-            .body-fix {
-                width:  100% !important;
-                height: 100% !important;
-                padding: 0 !important;
-                margin:  0 auto !important;
-                word-spacing: normal;
-                -webkit-text-size-adjust: 100%;
-                -ms-text-size-adjust: 100%;
-                -webkit-font-smoothing: antialiased;
-            }
+            /** Client-specific styles **/
+            /* Stops email clients resizing small text. */
+            body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+            /* Stops Outlook from adding extra spacing to tables. */
+            table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+            /* Uses a better rendering method when resizing images in Outlook IE. */
+            img { -ms-interpolation-mode: bicubic; }
+            
+            /* General reset styles */
+            *, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+            body  { width: 100% !important; height: 100% !important; margin: 0 !important; padding: 0 !important; }
+            table { border-collapse: collapse !important; }
+            img   { display: block; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+            h1, h2, h3, p { margin: 0; padding: 0; }
+
+            /* TEST TEST TEST */
+            a { text-decoration: none; }
+
+            /* Centre email on Android 4.4 - margin reset */
             div[style*="margin:16px 0"] {
                 margin: 0 !important;
             }
-            table, td {
-                border-collapse: collapse !important;
-                mso-table-lspace: 0pt;
-                mso-table-rspace: 0pt;
-                -webkit-text-size-adjust: 100%;
-                -ms-text-size-adjust: 100%;
-            }
-            img {
-                border: 0;
-                line-height: 100%;
-                outline: none;
-                text-decoration: none;
-                display: block;
-            }
-            p, h1, h2, h3 {
-                padding: 0;
-                margin: 0;
-            }
+
+            /* Prevent Apple blue links. */
             a[x-apple-data-detectors] {
                 color: inherit !important;
                 text-decoration: none !important;
@@ -96,7 +95,9 @@
                 font-weight: inherit !important;
                 line-height: inherit !important;
             }
-            u+#body a {
+
+            /* Prevent Gmail blue links. */
+            u + .body a {
                 color: inherit;
                 text-decoration: none;
                 font-size:   inherit;
@@ -104,54 +105,40 @@
                 font-weight: inherit;
                 line-height: inherit;
             }
+
+            /* Prevent Samsung blue links. */
             #MessageViewBody a {
                 color: inherit;
                 text-decoration: none;
-                font-size: inherit;
+                font-size:   inherit;
                 font-family: inherit;
                 font-weight: inherit;
                 line-height: inherit;
             }
+
             .link:hover { 
                 text-decoration: none !important; 
             }
-            .fadeimg {
-                transition: 0.3s !important;
-                opacity: 1 !important;
+            .body-fix {
+                word-spacing: normal;
+                -webkit-text-size-adjust: 100%;
+                -ms-text-size-adjust: 100%;
+                -webkit-font-smoothing: antialiased;
             }
-            .fadeimg:hover {
-                transition: 0.3s !important;
-                opacity: 0.5 !important;
-            }
-            .mobile { 
-                display: none; 
-            }
+            
         </style>
-        <!--mobile styles-->
+
+        <!-- Mobile styles -->
         <style>
             @media screen and (max-width:600px) {
-                .w90p  { width: 90%  !important; }
-                .w95p  { width: 95%  !important; }
                 .w100p { width: 100% !important; }
-
                 .imgFull { width: 100% !important; height: auto !important; }
-
-                .desktop { width: 0 !important; display: none !important; }
-                .mobile { display: block !important; }
-
-                .std { font-size: 18px !important; line-height: 28px !important; }
-
-                .cTxt { text-align: center !important; }
-
                 .tPad-0  { padding-top:   0 !important; }
-                .lPad-0  { padding-left:  0 !important; }
                 .rPad-0  { padding-right: 0 !important; }
-                .bPad-30 { padding-bottom: 30px !important; }
-
-                .star a { font-size: 40px !important; }
             }
         </style>
-        <!--dark mode styles-->
+
+        <!-- Dark mode styles -->
         <style>
             @media (prefers-color-scheme: dark) {
                 /* Shows Dark Mode-Only Content, Like Images */
@@ -161,7 +148,7 @@
                     overflow: visible !important;
                     float: none !important;
                     max-height: inherit !important;
-                    max-width: inherit !important;
+                    max-width:  inherit !important;
                     line-height: auto !important;
                     margin-top: 0px !important;
                     visibility: inherit !important;
@@ -180,10 +167,6 @@
 
                 /* Custom Dark Mode Font Colors */
                 h1, h2, h3, p, img { color: #EDF2F4 !important; }
-
-                /* Custom Dark Mode Text Link Color */
-                .link { color: #028383 !important; }
-                /* .footer a.link { color: #fdfdfd !important; } */
             }
 
             /* Copy dark mode styles for android support */
@@ -212,16 +195,14 @@
             [data-ogsc] .darkmode3 { background-color: #222023 !important; }
 
             /* Custom Dark Mode Font Colors */
-            [data-ogsc] h1, [data-ogsc] h3, [data-ogsc] p, [data-ogsc] span, [data-ogsc] a { color: #fdfdfd !important; }
-            [data-ogsc] h2, [data-ogsc] h2 a { color: #028383 !important; }
-            [data-ogsc] .white { color: #fdfdfd !important; }
+            [data-ogsc] h1, [data-ogsc] h3, [data-ogsc] p, [data-ogsc] span, [data-ogsc] a { color: #EDF2F4!important; }
+            [data-ogsc] .white { color: #EDF2F4 !important; }
 
             /* Custom Dark Mode Text Link Color */
-            [data-ogsc] .link { color: #028383 !important; }
-            [data-ogsc] .footer a.link { color: #fdfdfd !important; }
+            [data-ogsc] .footer a.link { color: #EDF2F4 !important; }
         </style>
 
-        <!--correct superscripts in Outlook-->
+        <!-- Correct superscripts in Outlook -->
         <!--[if (gte mso 9)|(IE)]>
         <style>
             body, table, td, h1, h2, h3, p, a, span {font-family: sans-serif, Arial, Helvetica !important;}
@@ -229,9 +210,8 @@
             a {text-decoration: none;}
         </style>
         <![endif]-->
-        <title>Daily Sentry Newsletter</title>
     </head>
-    <body id="body" class="darkmode body body-fix" style="font-family: 'Inter'">
+    <body class="darkmode body body-fix" style="font-family: 'Inter'">
         <div role="article" aria-roledescription="email" aria-label="Email from Wonderblum" xml:lang="en" lang="en" style="font-family: 'Inter'">
             <!--hidden preheader with preh-header spacer hack-->
             <div class="litmus-builder-preview-text" style="display:none;">
